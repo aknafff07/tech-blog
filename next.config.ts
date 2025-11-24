@@ -1,7 +1,16 @@
-import type { NextConfig } from "next";
+import { withContentlayer } from 'next-contentlayer';
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
+  reactStrictMode: true,
 };
 
-export default nextConfig;
+export default withContentlayer(nextConfig);
