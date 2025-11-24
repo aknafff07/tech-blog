@@ -1,5 +1,5 @@
-// src/app/about/page.tsx
 import Image from "next/image";
+import profilePic from "app/unnamed.jpg"; // <--- 1. Import dulu gambarnya
 
 export default function AboutPage() {
   return (
@@ -11,16 +11,19 @@ export default function AboutPage() {
         Tujuan kami adalah menyederhanakan konsep sulit menjadi tutorial yang mudah dipahami.
       </p>
       
-      {/* Simulasi Foto Profil */}
-      <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg mb-4">
+      {/* UPDATE DI SINI */}
+      <div className="relative w-32 h-32 mx-auto rounded-full overflow-hidden shadow-lg mb-4 border-4 border-white">
         <Image 
-          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&q=80"
-          alt="Admin Profile"
+          src={profilePic} // <--- Ganti jadi nama file foto Anda
+          alt="Foto Profil Admin"
           fill
           className="object-cover"
+          sizes="(max-width: 768px) 100vw, 200px" // Opsional: untuk optimasi
         />
       </div>
-      <p className="font-semibold">Admin TechBlog</p>
+      
+      <p className="font-semibold text-xl text-gray-900">Admin TechBlog</p>
+      <p className="text-sm text-gray-500">Fullstack Developer</p>
     </main>
   );
 }
